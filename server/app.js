@@ -1,6 +1,15 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+var settings = require('./routes/settings');
+var users = require('./routes/users');
+
+app.use(bodyParser.json());
+
+// Routes
+app.use('/settings', settings);
+app.use('/users', users);
 
 // Serve back static files
 app.use(express.static('./server/public'));

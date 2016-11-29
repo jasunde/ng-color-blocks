@@ -1,5 +1,5 @@
 <div class="row" id="gameview">
-  <h1>Can you find the {{currentColor | deCamel}} block?</h1>
+  <h1 ng-if="currentColor != ''">Can you find the {{currentColor | deCamel}} block?</h1>
 
   <h3 ng-if="messageText != ''" ng-class="{'alert-danger': !win, 'alert-success': win}" class="alert" id="feedback">{{messageText}}</h3>
 

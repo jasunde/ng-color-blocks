@@ -1,13 +1,25 @@
-colorBlocks.controller('GameController', ['$scope', 'DataFactory', '$timeout', function($scope, DataFactory, $timeout) {
+colorBlocks.controller('GameController', ['$scope', 'DataFactory', '$timeout', 'Game', function($scope, DataFactory, $timeout, Game) {
 
 console.log('game controller running');
-
 $scope.colors = DataFactory.colors;
+$scope.currentColor = '';
+
+if(!DataFactory.user) {
+  Game.findUser()
+    .then(function() {
+      $scope.colors = DataFactory.colors;
+      init();
+    })
+    .catch(function () {
+      console.log('Find user failed');
+    });
+} else {
+  init();
+}
+
 $scope.messageText = '';
 var timeout;
 
-// start game
-init();
 
 // resets game to the starting state
 function init() {
