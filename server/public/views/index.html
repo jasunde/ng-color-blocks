@@ -6,14 +6,24 @@
     <link rel="stylesheet" href="/css/style.css" />
 
     <script type="text/javascript" src="/vendor/angular.min.js"></script>
-    <script type="text/javascript" src="/vendor/angular-route.min.js"></script>    
+    <script type="text/javascript" src="/vendor/angular-route.min.js"></script>
+
+    <!-- App -->
     <script type="text/javascript" src="/scripts/clientapp.js"></script>
+
+    <!-- Services -->
     <script type="text/javascript" src="/scripts/services/dataFactory.js"></script>
+
+    <!-- Filter -->
+    <script type="text/javascript" src="/scripts/filters/deCamelFilter.js"></script>
+
+    <!-- Controllers -->
     <script type="text/javascript" src="/scripts/controllers/gameController.js"></script>
     <script type="text/javascript" src="/scripts/controllers/settingsController.js"></script>
+
 </head>
 
-<body ng-app="colorBlocks" ng-controller="GameController">
+<body ng-app="colorBlocks">
     <header ng-include="'/views/templates/nav.html'"></header>
 
     <main ng-view></main>

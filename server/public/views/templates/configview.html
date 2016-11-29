@@ -1,5 +1,15 @@
 <div class="row">
   <h1>Settings</h1>
 
-  To Do: UI to add colors to the game.
+  <h2>Add a New Color</h2>
+  <form>
+    <label for="newColor">New Color:</label>
+    <select type="text" id="newColor" ng-model="newColor" ng-options="color as color | deCamel for color in cssColors" placeholder="Color name"></select>
+    <button type="submit" ng-click="addColor()">Add Color</button>
+  </form>
+
+  <h2>Color List</h2>
+  <div id="button-container">
+    <div class="color-button" ng-repeat="color in colors" ng-style="{background: color}"></div>
+  </div>
 </div>
